@@ -1,0 +1,13 @@
+name: T9h - Exact-ref allowlist entry, full SHA NOT reachable from the allowed tag
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call action using a valid SHA from the same repo that is NOT reachable from v4 (closed PR #290 head)
+        uses: pnpm/action-setup@e1d4181826562a5e7e4f5647979df91ea6b4b5c8
+        continue-on-error: true
